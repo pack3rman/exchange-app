@@ -15,7 +15,7 @@
     </script>
         </head>
 <body>
-<form class="form-horizontal" action="/exchange/ex" method="get">
+<form class="form-horizontal" action="/ex" method="get">
     <td colspan="3">
         <label>Choose Yours Current to Sell: </label> <select name="currentTo" id="currentTo">
         <option th:each="c : ${currents}" th:value="${c}" th:utext="${c}"></option>

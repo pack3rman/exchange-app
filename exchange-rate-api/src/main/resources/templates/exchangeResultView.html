@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<div class="container">
+    <table border="1">
+        <tr>
+            <th>Current TO Exchange</th>
+            <th>Exchange</th>
+            <th>Amount of money</th>
+            <th>Price</th>
+            <th>You get :</th>
+        </tr>
+        <tbody>
+            <td th:text="${request.currentTo}"></td>
+            <td th:text="${request.currentFrom}"></td>
+            <td th:text="${request.amount}"></td>
+            <td th:text="${price}"></td>
+            <td th:text="${value}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/exchange")
+@RequestMapping("")
 public class ExchangeController {
 //STWORZYC LISTY ROZWIJALNE DO strony z wymiana walut
 @GetMapping("")

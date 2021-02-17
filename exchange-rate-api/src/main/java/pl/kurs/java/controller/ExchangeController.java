@@ -16,12 +16,15 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class ExchangeController {
+    public static final String BASE_URL = "https://api.exchangeratesapi.io/latest?base=PLN";
+    public static final String HTTPS_API_EXCHANGERATESAPI_IO_LATEST_BASE = "https://api.exchangeratesapi.io/latest?base=";
+
     //STWORZYC LISTY ROZWIJALNE DO strony z wymiana walut
     @GetMapping("")
     public String enterMainPage(@ModelAttribute ExchangeRequest request, ModelMap model) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<CurrentInfo> response = restTemplate.getForEntity(
-                "https://api.exchangeratesapi.io/latest?base=PLN", CurrentInfo.class);
+                BASE_URL, CurrentInfo.class);
         CurrentInfo currentInfo = response.getBody();
         List<String> all = new ArrayList<String>(currentInfo.getRates().keySet());
         model.addAttribute("currents", all);
@@ -34,17 +37,13 @@ public class ExchangeController {
         model.addAttribute("request", request);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<CurrentInfo> response = restTemplate.getForEntity(
-                "https://api.exchangeratesapi.io/latest?base=" + request.getCurrentTo(), CurrentInfo.class);
+                HTTPS_API_EXCHANGERATESAPI_IO_LATEST_BASE + request.getCurrentTo(), CurrentInfo.class);
         CurrentInfo currentInfo = response.getBody();
-        System.out.println(request);
-        System.out.println(currentInfo);
         Double price = currentInfo.getRates().get(request.getCurrentFrom());
-        System.out.println(price);
         model.addAttribute("currentInfo", currentInfo);
         model.addAttribute("price", price);
         Double value = price * request.getAmount();
         model.addAttribute("value", value);
-
         return "exchangeResultView";
     }
 }

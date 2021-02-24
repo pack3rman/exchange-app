@@ -12,3 +12,7 @@ public class StartAppExchange {
         SpringApplication.run(StartAppExchange.class, args);
     }
 }
+
+/*
+git: squash commits example
+ */

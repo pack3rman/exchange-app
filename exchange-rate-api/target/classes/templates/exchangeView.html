@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Car Application</title>
+    <title>Exchange Application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,7 +15,7 @@
     </script>
         </head>
 <body>
-<form class="form-horizontal" action="/exchange/ex" method="get">
+<form class="form-horizontal" action="/ex" method="get">
     <td colspan="3">
         <label>Choose Yours Current to Sell: </label> <select name="currentTo" id="currentTo">
         <option th:each="c : ${currents}" th:value="${c}" th:utext="${c}"></option>

@@ -21,7 +21,7 @@ public class ExchangeController {
 
     //STWORZYC LISTY ROZWIJALNE DO strony z wymiana walut
     @GetMapping("")
-    public String enterMainPage(@ModelAttribute ExchangeRequest request, ModelMap model) {
+    public String enterMainPage(ModelMap model) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<CurrentInfo> response = restTemplate.getForEntity(
                 BASE_URL, CurrentInfo.class);

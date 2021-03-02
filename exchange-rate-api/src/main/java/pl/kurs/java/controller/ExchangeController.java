@@ -13,6 +13,9 @@ import pl.kurs.java.model.ExchangeRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Exchange controller
+ */
 @Controller
 @RequestMapping("")
 public class ExchangeController {
